@@ -30,3 +30,11 @@ member3 = Member.new({
 })
 
 member3.save()
+
+member4 = Member.new ({
+    "first_name" => "Tom",
+    "last_name" => "Hanks",
+    "age" => 64
+})
+
+member4.save()
