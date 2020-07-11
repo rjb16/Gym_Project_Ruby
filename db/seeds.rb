@@ -40,4 +40,24 @@ member4 = Member.new ({
 member4.save()
 
 
+gym_class1 = Gym_class.new({
+    "name" => "HIIT",
+    "date" => "17th of July",
+    "price" => 5
+})
+gym_class1.save()
 
+gym_class2 = Gym_class.new({
+    "name" => "beginners powerlifting",
+    "date" => "20th of July",
+    "price" => 10
+})
+
+gym_class2.save()
+
+gym_class3 = Gym_class.new({
+    "name" => "boxing cardio",
+    "date" => "21st of July",
+    "price" => 15
+})
+gym_class3.save()
