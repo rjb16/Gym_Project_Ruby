@@ -14,12 +14,25 @@ class Member
     def save()
         sql = "INSERT INTO members (first_name, last_name, age)
         VALUES
-        ($1, $2)
+        ($1, $2, $3)
         RETURNING id"
         values = [@first_name, @last_name, @age]
-        results = SqlRunner.run(sql, values)
-        @id = results.first()['id'].to_i
+        member = SqlRunner.run(sql, values).first
+        @id = member['id'].to_i
     end
+
+    def self.delete_all
+        sql = "DELETE FROM members"
+        SqlRunner.run(sql)
+    end
+        
+
+
+
+
+
+
+end
 
 
 
