@@ -10,6 +10,17 @@ class Member
         @last_name = options['last_name']
         @age = options['age']
     end
-    
+
+    def save()
+        sql = "INSERT INTO members (first_name, last_name, age)
+        VALUES
+        ($1, $2)
+        RETURNING id"
+        values = [@first_name, @last_name, @age]
+        results = SqlRunner.run(sql, values)
+        @id = results.first()['id'].to_i
+    end
+
+
 
      
