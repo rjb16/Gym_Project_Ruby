@@ -21,6 +21,11 @@ class Gym_class
         @id = gym_class['id'].to_i
     end
 
+    def self.delete_all
+        sql = "DELETE FROM gym_classes"
+        SqlRunner.run(sql)
+    end
+
 
 
 
