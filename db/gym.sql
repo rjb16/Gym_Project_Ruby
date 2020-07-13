@@ -1,3 +1,4 @@
+DROP TABLE bookings;
 DROP TABLE gym_classes;
 DROP TABLE members;
 
@@ -13,6 +14,12 @@ CREATE TABLE gym_classes (
     name VARCHAR(255),
     date VARCHAR(255),
     price INT
+);
+
+CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    member_id INT REFERENCES members(id),
+    gym_class_id INT REFERENCES gym_classes(id)
 );
 
 
