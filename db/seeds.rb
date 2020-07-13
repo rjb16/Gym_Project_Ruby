@@ -61,3 +61,10 @@ gym_class3 = Gym_class.new({
     "price" => 15
 })
 gym_class3.save()
+
+booking1 = Booking.new({
+    "member_id" => member1.id,
+    "gym_class_id" => gym_class1.id
+})
+
+booking1.save()

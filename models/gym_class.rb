@@ -41,11 +41,11 @@ class Gym_class
     end
 
     def update()
-        sql = "UPDATE gym_classes
-        SET (name, date, price) = ($1, $2, $3)
-        WHERE id = $4"
-        values = [@name, @date, @price, @id]
-        SqlRunner.run(sql, values)
+      sql = "UPDATE gym_classes
+      SET (name, date, price) = ($1, $2, $3)
+       WHERE id = $4"
+      values = [@name, @date, @price, @id]
+      SqlRunner.run(sql, values)
     end
         
 
