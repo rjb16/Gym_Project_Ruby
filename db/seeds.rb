@@ -69,3 +69,6 @@ booking1 = Booking.new({
 })
 
 booking1.save()
+
+binding.pry
+nil
