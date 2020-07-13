@@ -37,6 +37,15 @@ class Member
         values = [id]
         results = SqlRunner.run(sql, values)
         return Member.new(results.first)
+    end
+
+    def update()
+        sql = "UPDATE members
+        SET (name, date, price) = ($1, $2, $3)
+        WHERE id = $4"
+        values = [@first_name, @last_name, @age, @id]
+        SqlRunner.run(sql, values)
+    end
 
 
 
