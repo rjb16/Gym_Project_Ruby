@@ -56,7 +56,7 @@ gym_class2 = Gym_class.new({
 gym_class2.save()
 
 gym_class3 = Gym_class.new({
-    "name" => "boxing cardio",
+    "name" => "boxing",
     "date" => "21st of July",
     "price" => 15
 })
