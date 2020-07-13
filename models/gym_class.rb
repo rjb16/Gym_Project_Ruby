@@ -47,19 +47,17 @@ class Gym_class
       values = [@name, @date, @price, @id]
       SqlRunner.run(sql, values)
     end
+
+    def members()
+        sql = "SELECT members.* FROM members INNER JOIN
+        bookings ON members.id = bookings.member_id
+        WHERE gym_class_id = $1"
+        values = [@id]
+        results = SqlRunner.run(sql, values)
+        return results.map { |member| Member.new(member)}
+    end
         
 
     
-
-
-
-
-
-
-
-
-
-
-
 
 end
