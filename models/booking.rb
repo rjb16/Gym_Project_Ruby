@@ -20,7 +20,7 @@ class Booking
     end
 
     def self.delete_all()
-        "DELETE from bookings"
+        sql = "DELETE from bookings"
         SqlRunner.run(sql)
     end
 
@@ -35,6 +35,14 @@ class Booking
         values = [id]
         results = SqlRunner.run(sql, values)
         return Booking.new(results.first)
+    end
+
+    def update()
+        sql = "UPDATE bookings
+        SET (name, date, price) = ($1, $2,)
+         WHERE id = $4"
+        values = [@member_id, @gym_class_id, @id]
+        SqlRunner.run(sql, values)
     end
 
 end
