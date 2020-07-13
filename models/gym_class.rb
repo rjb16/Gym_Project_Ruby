@@ -38,7 +38,18 @@ class Gym_class
         values = [id]
         results = SqlRunner.run( sql, values )
         return Gym_class.new(results.first)
-      end
+    end
+
+    def update()
+        sql = "UPDATE gym_classes
+        SET (name, date, price) = ($1, $2, $3)
+        WHERE id = $4"
+        values = [@name, @date, @price, @id]
+        SqlRunner.run(sql, values)
+    end
+        
+
+    
 
 
 
