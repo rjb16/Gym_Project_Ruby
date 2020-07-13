@@ -3,6 +3,7 @@ require_relative("../models/gym_class.rb")
 require_relative("../models/member.rb")
 require("pry-byebug")
 
+Booking.detele_all()
 Member.delete_all()
 Gym_class.delete_all()
 
