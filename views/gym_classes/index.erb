@@ -1,19 +1,16 @@
-<h1>Gym Classes</h1>
+<a href="/classes/new">Add New Class</a>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Date</th>
-    <th></th>
-    <th>Price</th>
+<% for gym_class in @gym_classes%>
+    <p>Class Name: <%= gym_class.name%></p>
+    <p><a href="/classes/<%= gym_class.id%>/sessions">Show all sessions for this class</a></p>
 
-  </tr>
-  <% for gym_class in @gym_classes %>
-  <tr>
-    <td><a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.date %><%= gym_class.price %>/a></td>
-    <td>|</td>
-    <td></td>
-  </tr>
-  <% end %>
-</table>
+    <form method="get" action="/gym_classes/<%= gym_class.id%>/edit">
+        <input type="submit" value="Update Class"/>
+    </form>
+
+    <form method="post" action="/gym_classes/<%= gym_class.id%>/delete">
+        <input type="submit" value="Delete Class"/>
+    </form>
+    <hr/>
+
+<% end%>

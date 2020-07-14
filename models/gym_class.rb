@@ -26,12 +26,7 @@ class Gym_class
         SqlRunner.run(sql)
     end
 
-    def self.all()
-        sql = "SELECT * from gym_classes"
-        results = SqlRunner.run(sql)
-        return results.map { |gym_classes| Gym_class.new(gym_class)}
-    end
-
+    
     def self.find(id)
         sql = "SELECT * FROM gym_classes
         WHERE id = $1"
@@ -57,6 +52,16 @@ class Gym_class
         return results.map { |member| Member.new(member)}
     end
         
+    def self.all()
+        sql = "SELECT * from gym_classes"
+        results = SqlRunner.run(sql)
+        return Gym_class.map_items(results)
+    end
+
+    # mapping method
+    def self.map_items(data)
+        return data.map {|gym_class| Gym_class.new(gym_class) }
+   end
 
     
 

@@ -71,6 +71,7 @@ class Member
 
 
     # Deletes booking with member if member is booked in to a gym_class, stops foreign key violation
+    # I realised delete on cascade does the same thing
     def delete_bookings()
         sql = "DELETE FROM bookings
         WHERE bookings.member_id = $1"
