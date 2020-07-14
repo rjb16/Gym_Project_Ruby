@@ -11,7 +11,7 @@ end
 
 # create
 
-post '/classes' do
+post '/gym_classes' do
     @gym_class = Gym_class.new(params)
     @gym_class.save()
     redirect to "/gym_classes"
