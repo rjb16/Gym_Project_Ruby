@@ -20,4 +20,21 @@ get "/bookings/new" do
     erb(:"bookings/new")
 end
 
+# create
+
+post '/bookings' do
+    booking = Booking.new(params)
+    booking.save()
+    erb(:"bookings/create")
+
+end
+
+# Delete
+
+post '/bookings/:id/delete' do
+     booking = Booking.find(params['id'].to_i)
+     booking.delete()
+     redirect to "/bookings"
+end
+
 
