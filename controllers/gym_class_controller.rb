@@ -14,30 +14,35 @@ end
 post '/classes' do
     @gym_class = Gym_class.new(params)
     @gym_class.save()
-    redirect to "/classes"
+    redirect to "/gym_classes"
 end
 
 # edit
 
-get '/classes/:id/edit' do
-    @gym_class = Gym_class.find(params['id'].to_i)
+get '/gym_classes/:id/edit' do
+    @gym_class = Gym_class.find(params[:id].to_i)
     erb(:"gym_classes/edit")
 end
 
 # update
 
-post '/classes/:id' do
+post '/gym_classes/:id' do
     gym_class = Gym_class.new(params)
     gym_class.update()
-    redirect to "/classes/#{params['id']}"
+    redirect to "/gym_classes"
 end
 
 # delete
 
-post '/classes/:id/delete' do
+post '/gym_classes/:id/delete' do
     gym_class = Gym_class.find(params['id'].to_i)
-    gym_class.delete_members()
     gym_class.delete()
-    redirect to "/classes"
+    redirect to "/gym_classes"
 end
 
+
+# new
+get '/classes/new' do
+    erb(:"gym_classes/new")
+    
+end

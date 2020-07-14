@@ -1,0 +1,14 @@
+<form method="post" action="/gym_classes/<%= @gym_class.id%>">
+    <label for="class_name">Class Name:</label>
+        <input id="class_name" value=<%= @gym_class.name%> type="text" name="name"/>
+    
+    <label for ="date">Date:</label>
+     <input id="date" value=<%= @gym_class.date%> type="text" name="date"/>
+
+     <label for ="price">Price:</label>
+     <input id="price" value=<%= @gym_class.price%> type="text" name="price"/>
+    
+    
+    <input type="submit" value="Update Class"/>
+
+</form>
