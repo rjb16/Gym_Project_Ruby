@@ -1,0 +1,19 @@
+<h1>Gym Classes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Date</th>
+    <th></th>
+    <th>Price</th>
+
+  </tr>
+  <% for gym_class in @gym_classes %>
+  <tr>
+    <td><a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.date %><%= gym_class.price %>/a></td>
+    <td>|</td>
+    <td></td>
+  </tr>
+  <% end %>
+</table>

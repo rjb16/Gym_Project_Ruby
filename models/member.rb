@@ -47,6 +47,10 @@ class Member
        SqlRunner.run(sql, values)
     end
 
+    def self.map_items(data)
+        return data.map { |member| Member.new(member)}
+    end
+    
     def gym_classes()
         sql = "SELECT gym_classes.* FROM gym_classes INNER JOIN bookings
         ON gym_classes.id = bookings.gym_class_id
@@ -55,7 +59,7 @@ class Member
         results = SqlRunner.run(sql, values)
         return results.map { |gym_class| Gym_class.new(gym_class)}
        
-        
+    
     end
 
 
