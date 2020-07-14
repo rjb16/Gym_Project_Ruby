@@ -46,10 +46,12 @@ class Booking
     end
 
     def member()
-        sql = "SELECT * FROM members WHERE members.id = $1"
+        sql = "SELECT * FROM members WHERE id = $1"
         values = [@member_id]
-        results = SqlRunner.run(sql, values)
-        return Member.new(results)
+        member = SqlRunner.run(sql, values)
+        results = member.map(){|member| Member.new(member)}
+        return results.first
     end
+
 
 end

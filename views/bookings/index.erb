@@ -4,14 +4,19 @@
 
     <table>
         <tr>
-            <th>Member Name</th>
-            <th>Class</th>
+            <th>ID</th>
+            <th>Member name</th>
+            <th>Class name</th>
         </tr>
         <hr/>
         <% for booking in @bookings%>
+        <% class_name = Gym_class.find(booking.gym_class_id)%>
+        
         <tr>
             <td><%= booking.id%></td>
-            <td><%= booking.member.first_name()%></td>
+            <td><%= booking.member.first_name%></td>
+            <td><%= class_name.name %></td>
+            
             <td><form method="post" action="/bookings/<%= booking.id%>/delete">
                     <input type="submit" value="Delete Booking"/>
                 </form></td>
