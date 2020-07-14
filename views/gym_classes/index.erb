@@ -2,7 +2,8 @@
 
 <% for gym_class in @gym_classes%>
     <p>Class Name: <%= gym_class.name%></p>
-    <p><a href="/classes/<%= gym_class.id%>/sessions">Show all sessions for this class</a></p>
+     <p>Date : <%= gym_class.date%></p>
+     <p>Price: <%= gym_class.price%></p>
 
     <form method="get" action="/gym_classes/<%= gym_class.id%>/edit">
         <input type="submit" value="Update Class"/>
