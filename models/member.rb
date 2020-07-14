@@ -61,10 +61,27 @@ class Member
        
     
     end
+    
+    def delete()
+        sql = "DELETE FROM members
+        WHERE id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
+
+    # Deletes booking with member if member is booked in to a gym_class, stops foreign key violation
+    def delete_bookings()
+        sql = "DELETE FROM bookings
+        WHERE bookings.member_id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
+
 
 
 end
 
 
 
-     

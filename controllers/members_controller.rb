@@ -46,15 +46,16 @@ end
 # Delete
 
 post '/members/:id/delete' do
-    member = Member.find_by_id(params['id'].to_i)
+    member = Member.find(params['id'].to_i)
     member.delete_bookings()
     member.delete()
     redirect to "/members"
 end
 
+
 # show all bookings for a member
 
 get '/members/:id/bookings' do
-    @member = Member.find_by_id(params['id'].to_i)
+    @member = Member.find(params['id'].to_i)
     erb(:"members/bookings")
 end
