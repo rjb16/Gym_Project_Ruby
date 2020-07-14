@@ -1,0 +1,14 @@
+<h1>Member Name: <%= @member.first_name()%></h1>
+<h2>Upcoming Classes:</h2>
+
+    <table>
+        <tr>
+            <th>Class Name</th>
+        </tr>
+        <% for gym_class in @member.gym_classes%>
+        <tr>
+            <td><%= gym_class.name%></td>
+        <% end %>
+
+        </tr>
+    </table>

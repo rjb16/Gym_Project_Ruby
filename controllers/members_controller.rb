@@ -57,5 +57,5 @@ end
 
 get '/members/:id/bookings' do
     @member = Member.find(params['id'].to_i)
-    erb(:"members/bookings")
+    erb(:"members/booking")
 end

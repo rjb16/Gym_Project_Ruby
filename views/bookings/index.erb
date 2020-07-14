@@ -1,0 +1,20 @@
+<a href="/bookings/new">Create New Booking</a>
+
+<h1>All Bookings</h1>
+
+    <table>
+        <tr>
+            <th>Member Name</th>
+            <th>Class</th>
+        </tr>
+        <hr/>
+        <% for booking in @bookings%>
+        <tr>
+            <td><%= booking.id%></td>
+            <td><%= booking.member.first_name()%></td>
+            <td><form method="post" action="/bookings/<%= booking.id%>/delete">
+                    <input type="submit" value="Delete Booking"/>
+                </form></td>
+        <% end %>
+        </tr>
+ </table>
