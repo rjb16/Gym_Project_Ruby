@@ -1,0 +1,30 @@
+body {
+    background: url('background.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Merriweather', serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    color:white;
+    text-decoration:none;
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.link { 
+    display: inline-block;
+    list-style: none;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.link-div {
+    text-align: center;
+
+}
