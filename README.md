@@ -21,7 +21,7 @@ Ruby requires extensions or 'gems' to run this. In command line/terminal run the
 'gem install pry'
 'gem install sinatra'
 In the terminal, use the createdb command to create a database called 'gym'.
-Run the sql with the database by using the command 'psql -d gym db/gym.sql, then run ruby.app
+Run the sql with the database by using the command 'psql -d gym db/gym.sql, then run ruby.app.
 In your browser, go to localhost: followed by your port number which should be displayed in the terminal.
 The app should now be running
 
